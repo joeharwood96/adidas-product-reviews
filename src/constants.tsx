@@ -1,0 +1,1 @@
+export const productBaseUrl: string = "http://localhost:3001"
