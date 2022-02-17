@@ -1,0 +1,33 @@
+.product-card {
+    max-width: 460px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+
+    &:hover {
+        border: solid thin black;
+    }
+
+    &-img {
+        width: 100%;
+    }
+
+    &-price {
+        background-color: #fff;
+        position: relative;
+        left: 0;
+        bottom: 1.5rem;
+        margin-left: 0.5rem;
+        padding: 2px 5px;
+    }
+
+    &-name {
+        padding: 0rem .75rem;
+        margin: 0;
+    }
+
+    &-description {
+        padding: 0rem .75rem 2rem;
+        margin: 0;
+    }
+}
