@@ -1,19 +1,19 @@
 import React from 'react'
+import './styles.scss'
 import { useProductsQuery } from '../../services/product' 
+
+// Components
+import Loader from '../../components/Loader'
+import ProductCard from '../../components/ProductCard'
 
 export default function ProductOverview() {
     const { data, error, isLoading, isSuccess } = useProductsQuery()
 
     return (
-        <div>
-            Product Overview
-            { isLoading && <h2>Loading...</h2>}
+        <div className="product-overview">
+            { isLoading && <Loader />}
             { error && <h2>Something went wrong...</h2>}
-            { isSuccess && 
-                <div>
-                    {data?.map(product => <p>{product.name}</p>)}
-                </div>
-            }
+            { isSuccess && data?.map(product => <ProductCard key={product.id} product={product} />)}
         </div>
     )
 }
