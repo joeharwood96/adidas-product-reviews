@@ -8,7 +8,6 @@ export default function Search() {
 
     const handleSubmit = () => {
         if(searchString) {
-            console.log(searchString)
             setSearchString('');
         }
     }

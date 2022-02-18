@@ -7,13 +7,15 @@ export default function Loader() {
 
     return (
         <div className="loader">
-            <img src={logo} alt="Adidas logo" className="loader-logo" />
-            <TailSpin
-                height="100"
-                width="100"
-                color='black'
-                ariaLabel='loading'
-            />
+            <div className="loader-center">
+                <img src={logo} alt="Adidas logo" className="loader-logo" />
+                <TailSpin
+                    height="100"
+                    width="100"
+                    color='black'
+                    ariaLabel='loading'
+                />
+            </div>
         </div>
     )
 }
