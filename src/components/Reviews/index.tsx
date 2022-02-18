@@ -6,6 +6,7 @@ import { Review } from '../../models/review.model'
 
 // Components
 import Loader from '../Loader'
+import AddReviewModal from '../AddReviewModal'
 
 export default function Reviews() {
     const { id } = useParams();
@@ -36,21 +37,17 @@ export default function Reviews() {
 
             { isSuccess && data?.map((review: Review, index) => 
                 (
-                    <div className="reviews-list" key={review.productId + index}>
+                    <div className="reviews-list" key={index}>
                         <h4>Review {index + 1}</h4>
                         {[...Array(5)].map((star, index) => {
-                            return (<span className={`star ${index < review.rating ? "on" : "off"}`}>&#9733;</span>)
+                            return (<span key={index} className={`star ${index < review.rating ? "on" : "off"}`}>&#9733;</span>)
                         })}
                         <p>{review.text}</p>
                     </div>
                 )
             )}
 
-            {showAddReview && 
-                <div>
-                    
-                </div>
-            }
+            {showAddReview && id && <AddReviewModal productId={id} setShowAddReview={setShowAddReview} />}
         </div>
     )
 }

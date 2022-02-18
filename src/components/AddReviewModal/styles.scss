@@ -1,0 +1,49 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+
+    &-content {
+        width: 500px;
+        background-color: white;
+        padding: 2rem;
+        border: solid thin black;
+    }
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-close {
+        background-color: white;
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &-submit {
+        height: 2rem;
+        border: none;
+        border-bottom: 1px solid black;
+        white-space: unset;
+        text-transform: uppercase;
+        background-color: white;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            cursor: pointer;
+            background-color: black;
+            color: white;
+        }
+    }
+}
