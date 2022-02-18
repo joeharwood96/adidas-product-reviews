@@ -48,7 +48,7 @@ export default function Reviews() {
 
             {showAddReview && 
                 <div>
-                    hi
+                    
                 </div>
             }
         </div>
