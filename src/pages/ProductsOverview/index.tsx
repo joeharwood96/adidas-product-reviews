@@ -1,6 +1,6 @@
 import React from 'react'
 import './styles.scss'
-import { useProductsQuery } from '../../services/product' 
+import { useProductsQuery } from '../../services/productApi' 
 
 // Components
 import Loader from '../../components/Loader'
@@ -13,7 +13,7 @@ export default function ProductOverview() {
         <div className="product-overview">
             { isLoading && <Loader />}
             { error && <h2>Something went wrong...</h2>}
-            { isSuccess && data?.map(product => <ProductCard key={product.id} product={product} />)}
+            { isSuccess && data?.map((product, index) => <ProductCard key={product.id + index} product={product} />)}
         </div>
     )
 }
