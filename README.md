@@ -22,4 +22,6 @@ Now open another tab in your terminal and run the following command
 yarn dev
 ```
 
-This will run the vite developement environment
+This will run the vite developement environment.
+
+Now you are ready to access the application at http://localhost:3006, enjoy :) 
