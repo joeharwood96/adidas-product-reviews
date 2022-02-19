@@ -5,6 +5,7 @@ import { useProductsQuery } from '../../services/productApi'
 // Components
 import Loader from '../../components/Loader'
 import ProductCard from '../../components/ProductCard'
+import Error from '../../components/Error'
 
 export default function ProductOverview() {
     const { data, error, isLoading, isSuccess } = useProductsQuery()
@@ -12,7 +13,7 @@ export default function ProductOverview() {
     return (
         <div className="product-overview">
             { isLoading && <Loader />}
-            { error && <h2>Something went wrong...</h2>}
+            { error && <Error />}
             { isSuccess && data?.map((product, index) => <ProductCard key={product.id + index} product={product} />)}
         </div>
     )
