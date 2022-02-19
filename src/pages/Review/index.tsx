@@ -6,6 +6,7 @@ import { useProductQuery } from '../../services/productApi'
 // Components
 import Loader from '../../components/Loader'
 import Reviews from '../../components/Reviews'
+import Error from '../../components/Error'
 
 export default function Review() {
     const { id } = useParams();
@@ -13,7 +14,7 @@ export default function Review() {
     return  (
         <div className="review-container">
             { isLoading && <Loader />}
-            { error && <h2>Something went wrong</h2>}
+            { error && <Error />}
             { isSuccess && data &&
                 <div className="review-product">
                     <img src={data.imgUrl} alt="product image" className="review-product-img" />

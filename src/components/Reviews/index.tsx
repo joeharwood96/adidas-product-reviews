@@ -7,6 +7,7 @@ import { Review } from '../../models/review.model'
 // Components
 import Loader from '../Loader'
 import AddReviewModal from '../AddReviewModal'
+import Error from '../Error'
 
 export default function Reviews() {
     const { id } = useParams();
@@ -20,7 +21,7 @@ export default function Reviews() {
         <div className="reviews">
             <h2 className="reviews-title">Ratings and Reviews</h2>
             { isLoading && <Loader />}
-            { error && <h2>Something went wrong...</h2>}
+            { error && <Error />}
             { isSuccess && data && 
                 <div className="reviews-header">
                     <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
