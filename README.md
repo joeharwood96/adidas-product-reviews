@@ -18,10 +18,17 @@ node server.js
 Running cors-anywhere ensures that cors issues are bypasts by adding necessary HTTP headers. 
 
 Now open another tab in your terminal and run the following command
+
 ```
 yarn dev
 ```
 
 This will run the vite developement environment.
 
-Now you are ready to access the application at http://localhost:3006, enjoy :) 
+Now you are ready to access the application at http://localhost:3006/, enjoy :) 
+
+Tests are created using Jest, to run tests run the following command
+
+```
+yarn test
+```
