@@ -31,18 +31,4 @@ export const productApi = createApi({
     })
 })
 
-export const useAddReview = async (id: string, review: Review) => {
-    const requestOptions = {
-        method: 'POST',
-        body: JSON.stringify(review)
-    };
-
-    try { 
-        const result = await fetch(`${reviewBaseUrl}/reviews/${id}`, requestOptions)
-        return result.json();
-    } catch (err) {
-        return err
-    } 
-}
-
 export const { useProductsQuery, useProductQuery, useReviewsQuery, useAddReviewMutation } = productApi
